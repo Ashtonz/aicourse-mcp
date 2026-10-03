@@ -1,0 +1,27 @@
+{
+  "$schema": "https://cdn.jsdelivr.net/npm/@modelcontextprotocol/sdk@latest/schema/server.json",
+  "name": "sg/aicourse-mcp",
+  "display_name": "AI Course SG — Singapore AI Course Directory",
+  "description": "Free public MCP server: search 312+ live AI courses from 11 Singapore providers with SkillsFuture funding signals, calculate nett course fees (SSG subsidy, SkillsFuture Credit, UTAP), and retrieve citable market statistics. Independent aggregator, refreshed daily.",
+  "version": "1.0.0",
+  "created_at": "2026-10-02",
+  "website_url": "https://aicourse.com.sg/connect",
+  "repository_url": "https://github.com/Ashtonz/aicourse-mcp",
+  "security": {
+    "contact_email": "aicoursesg@gmail.com"
+  },
+  "servers": [
+    {
+      "type": "remote",
+      "url": "https://aicourse.com.sg/api/mcp",
+      "transport": "streamable-http",
+      "auth": { "type": "none" },
+      "tools": [
+        { "name": "search_courses", "description": "Search AI courses by keyword, provider, technology, industry, funding and max price" },
+        { "name": "get_course", "description": "Full details for one course listing" },
+        { "name": "calculate_nett_fee", "description": "Illustrative SkillsFuture net-fee breakdown" },
+        { "name": "get_market_stats", "description": "Citable Singapore AI course market statistics" }
+      ]
+    }
+  ]
+}

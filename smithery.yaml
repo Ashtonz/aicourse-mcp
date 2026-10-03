@@ -1,0 +1,22 @@
+# Smithery configuration for the AI Course SG remote MCP server
+name: aicourse-sg
+displayName: AI Course SG — Singapore AI Course Directory
+description: Search 312+ live AI courses from 11 Singapore providers with SkillsFuture funding signals, calculate nett course fees, and retrieve citable market statistics. Free remote server, no auth.
+url: https://aicourse.com.sg/api/mcp
+transport: HTTP
+iconUrl: https://aicourse.com.sg/logo.png
+tools:
+  - name: search_courses
+    description: Search AI courses by keyword, provider, technology, industry, funding and max price
+  - name: get_course
+    description: Full details for one course listing (fees, duration, certification, curriculum)
+  - name: calculate_nett_fee
+    description: Illustrative SkillsFuture net-fee breakdown (SSG subsidy, SkillsFuture Credit, UTAP)
+  - name: get_market_stats
+    description: Citable Singapore AI course market statistics
+start:
+  command: npx
+  args:
+    - -y
+    - mcp-remote
+    - https://aicourse.com.sg/api/mcp
